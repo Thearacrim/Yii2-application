@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <title>test</title>
+  </head>
+
+  <script></script>
+  <body>
+    <p>Date: <input type="text" id="datepicker" /></p>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+  </body>
+</html>
+
+<?= $form->field($model, 'company_start_date')->widget( DatePicker::className(),
+[ 'inline' => false, 'clientOptions' => [ 'autoclose' => true, 'format' =>
+'yyyy-m-d' ] ]);?>
