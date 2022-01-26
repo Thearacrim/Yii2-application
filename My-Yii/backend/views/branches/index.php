@@ -37,15 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?php Pjax::begin(); ?>
-    <?php $exporter = new CsvGrid([
-    'dataProvider' => new ActiveDataProvider([
-        'query' => Branches::find(),
-        'pagination' => [
-            'pageSize' => 100, // export batch size
-        ],
-    ]),
-]);
-$exporter->export()->saveAs('/Uploads/file.csv');?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,  
         'tableOptions' => [ 
@@ -83,9 +74,7 @@ $script = <<< JS
     $(document).on("click",".trigggerModal",function(){
         $("#modal").modal("show").find("#modalContent").load($(this).attr("value"));
     })
-
-
 JS;
-$this->registerJs($script);
+$this->registerJs($script); 
 
 ?>
